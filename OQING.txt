@@ -1,0 +1,44 @@
+SEKA — OFFLINE WINDOWS O'YINI
+=============================
+
+Bu mustaqil, internet va LANsiz ishlaydigan o'rgatuvchi karta o'yini.
+3 ta kompyuter botiga qarshi o'ynaysiz. Garov yoki haqiqiy pul yo'q.
+
+ISHGA TUSHIRISH
+---------------
+Windows 10/11 da Python 3.10+ o'rnatilgan bo'lsin (Tkinter bilan):
+
+    py main.py
+
+Yoki papkadagi ishga_tushirish.bat faylini ikki marta bosing.
+
+QOIDALAR
+--------
+- Bosh menyuda ikki variantdan birini tanlang.
+- 1-variant: navbatda kartani almashtirish mumkin (ko'pi bilan 3 marta).
+- 2-variant: karta almashtirilmaydi; tarqatilgan 3 karta bilan o'ynaladi.
+- 36 kartali koloda ishlatiladi: 6, 7, 8, 9, 10, J, Q, K, A.
+- Har bir o'yinchiga 3 tadan karta tarqatiladi.
+- Bir xil rangdagi kartalarning ochkolari qo'shiladi; eng yuqori rang
+  yig'indisi qo'l ochkosi hisoblanadi.
+- 6-10 kartalar o'z qiymatida, J/Q/K 10, A 11 ochko.
+- Almashtirish variantida navbatda bitta kartani almashtirish yoki to'xtash
+  mumkin. Har o'yinchi ko'pi bilan 3 marta almashtiradi.
+- Almashtirishsiz variantda dastlab tarqatilgan kartalar bilan o'ynaladi;
+  navbat tugagach barcha kartalar ochiladi.
+- Hamma to'xtaganda eng ko'p ochko olgan o'yinchi raundni yutadi.
+- Bu Seka qoidalarining soddalashtirilgan, garovsiz o'rgatuvchi varianti.
+  Hududiy qoidalar farq qilishi mumkin.
+
+EXE YARATISH (Ixtiyoriy)
+------------------------
+Buyruqlar satrida loyiha papkasiga o'tib:
+
+    py -m pip install pyinstaller
+    py -m PyInstaller --onefile --windowed --name SekaOffline main.py
+
+Tayyor fayl dist\SekaOffline.exe ichida bo'ladi.
+
+TESTLAR
+-------
+    py -m unittest -v
